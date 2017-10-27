@@ -1,0 +1,11 @@
+services:
+    flexix.hidden_entity_type.form.type.hidden_entity_type:
+        class: Flexix\HiddenEntityTypeBundle\Form\Type\HiddenEntityType
+        tags:
+            - { name: form.type, alias: hidden_entity }
+            
+    flexix.hidden_entity_type.subsriber.subscriber:
+        class: Flexix\HiddenEntityTypeBundle\Subscriber\Subscriber
+        tags:
+            - { name: kernel.event_subscriber }            
+            

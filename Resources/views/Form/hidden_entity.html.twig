@@ -1,0 +1,19 @@
+{%- block hidden_entity_row -%}
+{{ form_widget(form) }}
+{%- endblock hidden_entity_row -%}
+
+
+{% block hidden_entity_widget %}
+
+    {%- if data is iterable  -%}
+
+    {% if data[0] is defined %}
+        <input value="{{data[0].id}}"  type='hidden' {{ block('widget_attributes') }} />
+    {% endif %}
+    {%- else -%}
+
+    {% if data.id is defined %}
+        <input value="{{data.id}}"  type='hidden' {{ block('widget_attributes') }} />
+    {% endif %}
+    {%- endif-%}    
+{% endblock %}
